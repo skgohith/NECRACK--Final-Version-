@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NECRACK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+    <canvas id="particleCanvas"></canvas>
+    <canvas id="matrixCanvas"></canvas>
+    
+    <div class="top-bar">
+        <button id="menuBtn" class="top-btn" aria-label="Menu">
+            ☰
+        </button>
+    </div>
+    
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <div class="container">
+        <h1 class="title">💀 NECRACK 💀</h1>
+        <p class="subtitle">Access your academic records</p>
+        
+        <div class="portal-box">
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="regInput" 
+                        placeholder="Enter Registration Number"
+                        aria-label="Registration Number Input"
+                    />
+                    <div class="input-actions">
+                        <button id="copyBtn" class="icon-btn" aria-label="Copy" title="Copy">
+                            📋
+                        </button>
+                        <button id="historyBtn" class="icon-btn" aria-label="History" title="History">
+                            🕐
+                        </button>
+                    </div>
+                </div>
+                <div id="historyDropdown" class="history-dropdown">
+                    <div class="history-empty">No history yet</div>
+                </div>
+            </div>
+            
+            <button id="accessBtn" aria-label="Access Portal">
+                ACCESS PORTAL
+            </button>
+            
+            <div class="progress-bar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modalTitle">Links Generated</h2>
+            <p class="modal-subtitle">Your secure links for attendance and exam results are ready.</p>
+            
+            <div class="modal-buttons">
+                <button id="attendanceBtn" class="modal-button" aria-label="Open Attendance">
+                    🏫 Attendance
+                </button>
+                <button id="resultBtn" class="modal-button" aria-label="Open Exam Results">
+                    📊 Exam Results
+                </button>
+            </div>
+            
+            <button id="closeBtn" class="close-button" aria-label="Close Modal">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <div class="menu-modal" id="menuModal">
+        <div class="menu-content">
+            <h2 class="menu-title">⚙️ SETTINGS</h2>
+            
+            <div class="menu-section">
+                <div class="menu-section-title">🎨 Theme</div>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="dark">Dark</button>
+                    <button class="theme-btn" data-theme="light">Light</button>
+                    <button class="theme-btn" data-theme="neon">Neon</button>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-section-title">🏆 Achievements</div>
+                <div class="achievements-grid" id="achievementsGrid"></div>
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-section-title">🎮 Extras</div>
+                <div class="menu-item" id="gameMenuItem">
+                    <div class="menu-item-text">
+                        <span>🐍</span>
+                        <span>Snake Game (Maintanence)</span>
+                    </div>
+                    <span>→</span>
+                </div>
+            </div>
+
+            <button class="close-button" id="closeMenuBtn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
